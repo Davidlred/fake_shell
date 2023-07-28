@@ -84,8 +84,6 @@ char *str_tok(char *str, char *delim);
 char *dup_range(char *source, int old, int now);
 char *trim_str(char *string);
 
-
-
 void be_free(char **argu);
 void clear_progdata(shell_information *cmd_data);
 void clear_all(shell_information cmd_data);
@@ -107,14 +105,14 @@ char *var_exp(char *line, shell_information *cmd_data);
 char *get_environment(const char *data_name);
 int set_environment(char *variable, char *value);
 int un_set_environment(char *variable);
-
+char *expander(char *string, int snake, shell_information *cmd_data);
 int env_printer(shell_information *cmd_data);
 int exit_in(shell_information *cmd_data);
 int setenv_forbuilt(shell_information *cmd_data);
 int unset_built(shell_information *cmd_data);
 int enter_built(shell_information *cmd_data);
 int build_aly(shell_information *cmd_data);
-
+void error_head(shell_information *cmd_data);
 void alias_adder(char *data_name, char *data_value, shell_information *cmd_data);
 void alias_printer(shell_information *cmd_data, char *names);
 aliasList *alias_getter(shell_information *cmd_data, char *data_name);
